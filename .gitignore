@@ -1,13 +1,8 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
+# Dependency directories
+node_modules/
 
-# dependencies
-/node_modules
-
+# dotenv environment variables file
 .env
+.gitignore.bak
 
-package-lock.json
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
+/backend

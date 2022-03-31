@@ -1,15 +1,38 @@
+
+
+async function sendEmail(params) {
+    try {
+        console.log(`Sending email`);
+        let url = `https://pk-website-back.herokuapp.com/emails`;
+        // let url = `http://localhost:8888`;
+        let response = await fetch(url, {
+            method: "POST",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(params),
+        });
+        let json = await response.json();
+        console.log(`Retrieved ${JSON.stringify(json, null, 4)}`);
+        return json.isEmailSent;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function validateForm(params) {
+    for (let key in params) {
+        if (params[key] == null || params[key].trim() === "") {
+            return false;
+        }
+    }
+    return true;
+}
+
 //Send email
-const email_userId = process.env.EMAIL_USERID;
-const email_templateId = process.env.EMAIL_TEMPLATEID;
-const email_serviceId = process.env.EMAIL_SERVICEID;
-
-(function () {
-    emailjs.init(email_userId);
-})();
-
-
 const submitBtn = document.getElementById("submit-btn");
-submitBtn.addEventListener("click", () => {
+submitBtn.addEventListener("click", async () => {
 
     var templateParams = {
         name: document.getElementById("form-name").value,
@@ -18,30 +41,23 @@ submitBtn.addEventListener("click", () => {
     };
 
     let validated = validateForm(templateParams);
-
-    if(validated) {
-        emailjs.send(email_serviceId, email_templateId, templateParams)
-        .then(function (response) {
-            // console.log('SUCCESS!', response.status, response.text);
+    if (validated) {
+        const loading = document.querySelector(".loading-overlay")
+        loading.classList.add("active");
+        let result = await sendEmail(templateParams);
+        if (result) {
             alert("Message sent. I'll get back to you ASAP.");
             document.getElementById("contact-form-email").reset();
-        }, function (error) {
-            // console.log('FAILED...', error);
+        } else {
             alert("Something went wrong... Please try again later.");
-        });
+        }
+        loading.classList.remove("active");
     } else {
         alert("Please fill out the fields.")
     }
 });
 
-function validateForm(params) {
-    for(let key in params) {
-        if(params[key] == null || params[key].trim() === "") {
-            return false;
-        }
-    }
-    return true;
-}
+{/* <i class="fas fa-spinner fa-pulse"></i> */ }
 
 // Navigation bar effects on scroll
 window.addEventListener("scroll", function () {

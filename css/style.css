@@ -752,7 +752,8 @@ header.sticky .nav-bar {
     font-weight: 700;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     border: none;
     color: var(--first-color);
     background: var(--transparent-color-02);
@@ -831,19 +832,22 @@ footer a {
     margin-bottom: 30px;
 }
 
-.footer-container .info, .footer-container .follow {
+.footer-container .info,
+.footer-container .follow {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.footer-container .info h3, .footer-container .follow h3 {
+.footer-container .info h3,
+.footer-container .follow h3 {
     font-size: 1.1em;
     font-weight: 500;
     margin-bottom: 30px;
 }
 
-.footer-container .info ul, .footer-container .follow ul {
+.footer-container .info ul,
+.footer-container .follow ul {
     display: flex;
 }
 
@@ -860,6 +864,22 @@ footer a {
     font-size: var(--normal-font-size);
     font-weight: 300;
     margin-top: 50px;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 9999999;
+    visibility: hidden;
+}
+
+.loading-overlay.active {
+    visibility: visible;
 }
 
 /* Media query max-width 1070px */
@@ -912,7 +932,7 @@ footer a {
 
     .nav-close-btn {
         position: absolute;
-        background: url(../images/close-btn.png)no-repeat;
+        background: url(../images/close-btn.png) no-repeat;
         /* filter: var(--color-filter); */
         background-size: 12px;
         background-position: center;
@@ -925,7 +945,7 @@ footer a {
     }
 
     .nav-menu-btn {
-        background: url(../images/menu-btn.png)no-repeat;
+        background: url(../images/menu-btn.png) no-repeat;
         /* filter: var(--color-filter); */
         background-size: 30px;
         background-position: center;
@@ -991,7 +1011,8 @@ footer a {
         flex-direction: column;
     }
 
-    .footer-container .about, .footer-container .info {
+    .footer-container .about,
+    .footer-container .info {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1037,7 +1058,7 @@ footer a {
 
     /* === Home section  ===*/
 
-    .home .home-container{
+    .home .home-container {
         display: grid;
     }
 
@@ -1045,16 +1066,16 @@ footer a {
         position: absolute;
     }
 
-    .home-container .home-img img{
+    .home-container .home-img img {
         width: 65%;
         transform: translate(80px, -180px);
     }
 
-    .home .home-container .info{
+    .home .home-container .info {
         font-size: 0.8rem;
     }
 
-    .media-icons{
+    .media-icons {
         margin-bottom: 80px;
     }
 
