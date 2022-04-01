@@ -57,8 +57,6 @@ submitBtn.addEventListener("click", async () => {
     }
 });
 
-{/* <i class="fas fa-spinner fa-pulse"></i> */ }
-
 // Navigation bar effects on scroll
 window.addEventListener("scroll", function () {
     const header = document.querySelector("header");
@@ -140,6 +138,7 @@ navItems.forEach((navItem) => {
 
 //scroll reveal animation
 //Common reveal options to create reveal animations
+
 ScrollReveal({
     // reset: true,
     distance: '60px',
@@ -148,13 +147,13 @@ ScrollReveal({
 });
 
 //Target elements, and specify options to create reveal animation
-ScrollReveal().reveal('.home .info h2, .section-title-01, .section-title-02', { delay: 400, origin: 'left' });
-ScrollReveal().reveal('.home .info h3, .home .info p, .about-info .btn', { delay: 500, origin: 'right' });
-ScrollReveal().reveal('.home .info .btn', { delay: 600, origin: 'bottom' });
-ScrollReveal().reveal('.media-icons i, .contact-left li', { delay: 400, origin: 'left', interval: 200 });
-ScrollReveal().reveal('.home-img, .about-img', { delay: 400, origin: 'bottom' });
-ScrollReveal().reveal('.about .description, .contact-right', { delay: 600, origin: 'right' });
-ScrollReveal().reveal('.about .professional-list li', { delay: 400, origin: 'right', interval: 200 });
-ScrollReveal().reveal('.skills-description, .contact-card, .contact-left h2', { delay: 600, origin: 'left' });
-ScrollReveal().reveal('.experience-card, .education, .projects .img-card', { delay: 700, origin: 'bottom', interval: 200 });
-ScrollReveal().reveal('footer, .group', { delay: 400, origin: 'top', interval: 200 });
+ScrollReveal().reveal('.home .info h2, .section-title-01, .section-title-02', { delay: 400 });
+ScrollReveal().reveal('.home .info h3, .home .info p, .about-info .btn', { delay: 500 });
+ScrollReveal().reveal('.home .info .btn', { delay: 600 });
+ScrollReveal().reveal('.media-icons i, .contact-left li', { delay: 400, interval: 200 });
+ScrollReveal().reveal('.home-img, .about-img', { delay: 400 });
+ScrollReveal().reveal('.about .description, .contact-right', { delay: 600 });
+ScrollReveal().reveal('.about .professional-list li', { delay: 400, interval: 200 });
+ScrollReveal().reveal('.skills-description, .contact-card, .contact-left h2', { delay: 600 });
+ScrollReveal().reveal('.experience-card, .education, .projects .img-card', { delay: 700, interval: 200 });
+ScrollReveal().reveal('footer, .group', { delay: 400, interval: 200 });
