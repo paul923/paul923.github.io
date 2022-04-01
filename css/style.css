@@ -103,6 +103,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    background: rgba(255, 255, 255, .5);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     transition: .6s ease;
 }
@@ -612,6 +614,7 @@ header.sticky .nav-bar {
     left: 0;
     background: var(--transparent-color-01);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     visibility: hidden;
     opacity: 0;
     transition: .3s ease;
